@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(npm init:*)",
+      "Bash(npx speckit@latest init)",
+      "Bash(npm install:*)",
+      "Bash(npm search:*)",
+      "Bash(npx speckit:*)",
+      "Bash(printf:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

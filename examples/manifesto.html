@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>United Workers Party 2025 Manifesto</title>
+
+        <link rel="stylesheet" href="../build/css/flipbook.min.css">
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.3.js"
+            integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="../build/js/flipbook.min.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function () {
+                jQuery('#container').flipBook({
+                    pdfUrl: 'pdf/manifesto.pdf',
+                    backgroundColor: '#2C3E50',
+                    backgroundPattern: '',
+                    btnShare: {
+                        enabled: true
+                    },
+                    btnDownloadPages: {
+                        enabled: true
+                    },
+                    btnDownloadPdf: {
+                        enabled: true,
+                        title: 'Download Manifesto PDF',
+                        icon: 'fa-download'
+                    },
+                    btnPrint: {
+                        enabled: true
+                    },
+                    btnToc: {
+                        enabled: true
+                    },
+                    btnSearch: {
+                        enabled: true
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div id="container"></div>
+    </body>
+</html>

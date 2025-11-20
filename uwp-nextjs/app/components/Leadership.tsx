@@ -31,7 +31,7 @@ export default function Leadership() {
         <div className="text-center mb-10 sm:mb-11 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-grey mb-4 sm:mb-5 md:mb-6 relative inline-block pb-3 sm:pb-4 px-4 sm:px-0">
             Experienced. Committed. Ready to Lead.
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-uwp-red rounded"></span>
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-uwp-yellow to-uwp-orange rounded"></span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-[900px] mx-auto leading-relaxed px-4 sm:px-0">
             Meet the team dedicated to reclaiming our future—leaders with proven experience, integrity, and a clear vision for Saint Lucia.
@@ -54,7 +54,7 @@ export default function Leadership() {
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-dark-grey mb-2">
                   {leader.name}
                 </h3>
-                <span className="inline-block bg-uwp-red text-white px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold tracking-wider rounded-full mb-3 sm:mb-4 uppercase">
+                <span className="inline-block bg-gradient-to-r from-uwp-yellow to-uwp-orange text-white px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-bold tracking-wider rounded-full mb-3 sm:mb-4 uppercase shadow-md">
                   {leader.role}
                 </span>
                 <p className="text-sm sm:text-base text-gray-600 leading-relaxed">

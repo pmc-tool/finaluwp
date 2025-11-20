@@ -12,7 +12,7 @@ export default function CTA() {
           fill
           className="object-cover opacity-10"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-uwp-red/95 to-uwp-red"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-uwp-green/95 to-uwp-green"></div>
       </div>
 
       {/* Content */}
@@ -28,7 +28,7 @@ export default function CTA() {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
           <a
             href="#contact"
-            className="flex items-center justify-center bg-white text-uwp-red px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-gray-100 transition-colors shadow-lg w-full sm:w-auto text-center min-h-[48px]"
+            className="flex items-center justify-center bg-white text-uwp-green px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-gray-100 transition-colors shadow-lg w-full sm:w-auto text-center min-h-[48px]"
           >
             Get Involved
           </a>

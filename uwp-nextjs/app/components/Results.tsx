@@ -46,7 +46,7 @@ export default function Results() {
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-grey mb-6 relative inline-block pb-4 bg-white md:bg-transparent px-4 md:px-0 py-2 md:py-0 rounded-lg">
               Results You Could See. Progress You Could Feel.
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-uwp-red rounded"></span>
+              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-uwp-yellow to-uwp-orange rounded"></span>
             </h2>
             <p className="hidden sm:block text-base md:text-lg text-gray-600 max-w-[900px] mx-auto leading-relaxed">
               The UWP has a proven record of delivering results—not just promises. Our previous government brought unprecedented investment, infrastructure development, and economic growth to Saint Lucia.
@@ -58,7 +58,7 @@ export default function Results() {
             {achievements.map((achievement, index) => (
               <Card key={index}>
                 <div className="text-center py-2">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-uwp-red mb-3">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-uwp-yellow to-uwp-orange bg-clip-text text-transparent mb-3">
                     {achievement.stat}
                   </div>
                   <div className="text-xs sm:text-sm md:text-base font-bold text-dark-grey mb-3">
@@ -137,7 +137,7 @@ export default function Results() {
                     key={index}
                     className={`flex items-start gap-3 ${hideClasses}`}
                   >
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-uwp-red/10 text-uwp-red flex items-center justify-center mt-0.5">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-uwp-green/10 text-uwp-green flex items-center justify-center mt-0.5">
                       {icons[index]}
                     </span>
                     <span className="text-sm md:text-base text-gray-700">{highlight}</span>

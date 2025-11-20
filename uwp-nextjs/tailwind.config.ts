@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'uwp-red': '#ED1C26',
+        'uwp-yellow': '#FFCC00',
+        'uwp-orange': '#FFA500',
+        'uwp-green': '#129949',
+        'uwp-green-dark': '#0F7A39',
         'dark-grey': '#333333',
         'light-grey': '#F5F5F5',
         'medium-grey': '#E8E8E8',

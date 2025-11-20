@@ -105,7 +105,7 @@ export default function Strategy() {
         <div className="text-center mb-10 sm:mb-11 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-dark-grey mb-4 sm:mb-5 md:mb-6 relative inline-block pb-3 sm:pb-4">
             3 Strategic Objectives
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-uwp-red rounded"></span>
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-uwp-yellow to-uwp-orange rounded"></span>
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-[800px] mx-auto leading-relaxed px-4 sm:px-0">
             Our approach is clear, focused, and actionable. These three strategic pillars guide every policy, every decision, and every action we take.
@@ -122,7 +122,7 @@ export default function Strategy() {
               className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
               aria-label="Previous"
             >
-              <svg className="w-5 h-5 text-uwp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-uwp-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
@@ -131,7 +131,7 @@ export default function Strategy() {
               className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
               aria-label="Next"
             >
-              <svg className="w-5 h-5 text-uwp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-uwp-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
@@ -147,7 +147,7 @@ export default function Strategy() {
                     <Card hover>
                       <div className="flex flex-col h-full">
                         {/* Number Badge */}
-                        <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-uwp-red text-white text-xl font-bold mb-4">
+                        <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-uwp-yellow to-uwp-orange text-white text-xl font-bold mb-4 shadow-md">
                           {objective.number}
                         </div>
 
@@ -165,7 +165,7 @@ export default function Strategy() {
                         <ul className="space-y-2.5 mt-auto">
                           {objective.points.map((point, idx) => (
                             <li key={idx} className="flex items-start gap-2.5">
-                              <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-red mt-1.5"></span>
+                              <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-green mt-1.5"></span>
                               <span className="text-sm text-gray-600 leading-relaxed">{point}</span>
                             </li>
                           ))}
@@ -191,7 +191,7 @@ export default function Strategy() {
               <Card key={index} hover>
                 <div className="flex flex-col h-full">
                   {/* Number Badge */}
-                  <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-uwp-red text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-5">
+                  <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-uwp-yellow to-uwp-orange text-white text-xl sm:text-2xl font-bold mb-4 sm:mb-5 shadow-md">
                     {objective.number}
                   </div>
 
@@ -209,7 +209,7 @@ export default function Strategy() {
                   <ul className="space-y-2.5 sm:space-y-3 mt-auto">
                     {objective.points.map((point, idx) => (
                       <li key={idx} className="flex items-start gap-2.5 sm:gap-3">
-                        <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-red mt-1.5 sm:mt-2"></span>
+                        <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-uwp-green mt-1.5 sm:mt-2"></span>
                         <span className="text-sm text-gray-600 leading-relaxed">{point}</span>
                       </li>
                     ))}
@@ -227,7 +227,7 @@ export default function Strategy() {
           </p>
           <a
             href="#manifesto"
-            className="inline-block bg-uwp-red text-white px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-[#c01820] transition-colors shadow-md"
+            className="inline-block bg-uwp-green text-white px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-uwp-green-dark transition-colors shadow-md"
           >
             Read Full Manifesto
           </a>

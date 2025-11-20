@@ -54,14 +54,14 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-dark-grey hover:text-uwp-red font-semibold transition-colors text-sm lg:text-base"
+                className="text-dark-grey hover:text-uwp-green font-semibold transition-colors text-sm lg:text-base"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="bg-uwp-red text-white px-5 py-2 rounded-lg font-bold text-sm lg:text-base hover:bg-[#c01820] transition-colors"
+              className="bg-uwp-green text-white px-5 py-2 rounded-lg font-bold text-sm lg:text-base hover:bg-uwp-green-dark transition-colors"
             >
               Get Involved
             </a>
@@ -87,14 +87,14 @@ export default function Header() {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="text-dark-grey hover:text-uwp-red font-semibold transition-colors py-2"
+                className="text-dark-grey hover:text-uwp-green font-semibold transition-colors py-2"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="bg-uwp-red text-white px-5 py-3 rounded-lg font-bold text-center hover:bg-[#c01820] transition-colors"
+              className="bg-uwp-green text-white px-5 py-3 rounded-lg font-bold text-center hover:bg-uwp-green-dark transition-colors"
             >
               Get Involved
             </a>

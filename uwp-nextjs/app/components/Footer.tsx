@@ -36,7 +36,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-white/70 hover:text-uwp-red transition-colors"
+                    className="text-sm text-white/70 hover:text-uwp-green transition-colors"
                   >
                     {link.label}
                   </a>
@@ -56,7 +56,7 @@ export default function Footer() {
                   href="https://facebook.com/uwpsaintlucia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/70 hover:text-uwp-red transition-colors"
+                  className="text-sm text-white/70 hover:text-uwp-green transition-colors"
                 >
                   Facebook
                 </a>
@@ -66,7 +66,7 @@ export default function Footer() {
                   href="https://twitter.com/uwpsaintlucia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/70 hover:text-uwp-red transition-colors"
+                  className="text-sm text-white/70 hover:text-uwp-green transition-colors"
                 >
                   Twitter
                 </a>
@@ -76,7 +76,7 @@ export default function Footer() {
                   href="https://instagram.com/uwpsaintlucia"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-white/70 hover:text-uwp-red transition-colors"
+                  className="text-sm text-white/70 hover:text-uwp-green transition-colors"
                 >
                   Instagram
                 </a>

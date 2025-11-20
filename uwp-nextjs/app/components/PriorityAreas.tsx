@@ -98,7 +98,7 @@ export default function PriorityAreas() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-dark-grey mb-6 relative inline-block pb-4">
             Priority Policy Areas
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-uwp-red rounded"></span>
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-uwp-yellow to-uwp-orange rounded"></span>
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-[900px] mx-auto leading-relaxed">
             Our manifesto addresses the issues that matter most to Saint Lucians—from security and healthcare to economic growth and environmental sustainability.
@@ -111,7 +111,7 @@ export default function PriorityAreas() {
             <Card key={index} hover>
               <div className="flex flex-col h-full">
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-uwp-red/10 text-uwp-red mb-5">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-uwp-green/10 text-uwp-green mb-5">
                   {area.icon}
                 </div>
 
@@ -129,7 +129,7 @@ export default function PriorityAreas() {
                 <ul className="space-y-2 mt-auto">
                   {area.points.map((point, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <span className="flex-shrink-0 w-1 h-1 rounded-full bg-uwp-red mt-2"></span>
+                      <span className="flex-shrink-0 w-1 h-1 rounded-full bg-uwp-green mt-2"></span>
                       <span className="text-xs md:text-sm text-gray-600">{point}</span>
                     </li>
                   ))}
@@ -146,7 +146,7 @@ export default function PriorityAreas() {
           </p>
           <a
             href="#manifesto"
-            className="inline-block bg-uwp-red text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-[#c01820] transition-colors shadow-md"
+            className="inline-block bg-uwp-green text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-uwp-green-dark transition-colors shadow-md"
           >
             Explore the Full Plan
           </a>

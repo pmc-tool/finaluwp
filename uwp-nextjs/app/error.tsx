@@ -18,7 +18,7 @@ export default function Error({
     <div className="min-h-screen flex items-center justify-center bg-light-grey px-5">
       <div className="max-w-2xl text-center">
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-uwp-red/10 text-uwp-red mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-uwp-green/10 text-uwp-green mb-6">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
                 strokeLinecap="round"
@@ -44,13 +44,13 @@ export default function Error({
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={reset}
-            className="bg-uwp-red text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-[#c01820] transition-colors shadow-md"
+            className="bg-uwp-green text-white px-8 py-4 rounded-lg font-bold text-base hover:bg-uwp-green-dark transition-colors shadow-md"
           >
             Try Again
           </button>
           <a
             href="/"
-            className="border-2 border-uwp-red text-uwp-red px-8 py-4 rounded-lg font-bold text-base hover:bg-uwp-red hover:text-white transition-colors"
+            className="border-2 border-uwp-green text-uwp-green px-8 py-4 rounded-lg font-bold text-base hover:bg-uwp-green hover:text-white transition-colors"
           >
             Go to Homepage
           </a>
@@ -58,7 +58,7 @@ export default function Error({
 
         <p className="text-sm text-gray-500 mt-8">
           If the problem persists, please contact us at{' '}
-          <a href="mailto:info@uwpsaintlucia.org" className="text-uwp-red hover:underline">
+          <a href="mailto:info@uwpsaintlucia.org" className="text-uwp-green hover:underline">
             info@uwpsaintlucia.org
           </a>
         </p>

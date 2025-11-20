@@ -76,7 +76,7 @@ export default function ManifestoSummary() {
         <div className="text-center mb-10 pb-8">
           <h3 className="text-2xl md:text-3xl font-bold text-dark-grey mb-3 relative inline-block pb-4">
             6 Key Commitments for Saint Lucia
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-uwp-red rounded"></span>
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-uwp-yellow to-uwp-orange rounded"></span>
           </h3>
           <p className="hidden sm:block text-base md:text-lg text-gray-600 max-w-[700px] mx-auto mt-6 leading-relaxed">
             A clear, focused agenda built on trust, relief, safety, growth, investment, and people-first development.
@@ -91,7 +91,7 @@ export default function ManifestoSummary() {
             className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
             aria-label="Previous"
           >
-            <svg className="w-6 h-6 text-uwp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-uwp-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
@@ -100,7 +100,7 @@ export default function ManifestoSummary() {
             className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
             aria-label="Next"
           >
-            <svg className="w-6 h-6 text-uwp-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-uwp-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -116,7 +116,7 @@ export default function ManifestoSummary() {
                 <div key={index} className="commitment-card flex-shrink-0 w-[85vw] snap-center">
                   <Card hover>
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-14 h-14 rounded-full bg-uwp-red/10 flex items-center justify-center text-uwp-red">
+                      <div className="flex-shrink-0 w-14 h-14 rounded-full bg-uwp-green/10 flex items-center justify-center text-uwp-green">
                         {commitment.icon}
                       </div>
                       <div>
@@ -139,7 +139,7 @@ export default function ManifestoSummary() {
             {commitments.map((commitment, index) => (
               <Card key={index} hover className="h-full">
                 <div className="flex items-start gap-4 h-full">
-                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-uwp-red/10 flex items-center justify-center text-uwp-red">
+                  <div className="flex-shrink-0 w-14 h-14 rounded-full bg-uwp-green/10 flex items-center justify-center text-uwp-green">
                     {commitment.icon}
                   </div>
                   <div className="flex flex-col">

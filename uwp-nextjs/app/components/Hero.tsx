@@ -38,7 +38,7 @@ export default function Hero() {
           {/* Right Side - Manifesto Card (Glassmorphism) */}
           <div className="hidden lg:block">
             <div className="relative bg-white/15 backdrop-blur-[20px] border border-white/30 rounded-2xl p-8 shadow-[0_8px_32px_rgba(0,0,0,0.25)]">
-              <span className="inline-block bg-uwp-red text-white px-4 py-2 text-xs font-bold tracking-wider rounded-full mb-5 uppercase">
+              <span className="inline-block bg-uwp-green text-white px-4 py-2 text-xs font-bold tracking-wider rounded-full mb-5 uppercase">
                 2025 Manifesto
               </span>
               <h3 className="text-3xl font-bold text-white mb-4 leading-tight drop-shadow-[2px_2px_8px_rgba(0,0,0,0.5)]">

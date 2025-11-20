@@ -197,7 +197,7 @@ export default function Flipbook({
         <a
           href={pdfPath}
           download
-          className="inline-block bg-uwp-red text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-[#c01820] transition-colors shadow-md"
+          className="inline-block bg-uwp-green text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-bold text-sm sm:text-base hover:bg-uwp-green-dark transition-colors shadow-md"
         >
           Download PDF ({pdfSize})
         </a>

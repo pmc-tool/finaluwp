@@ -13,6 +13,8 @@ export default function Flipbook({
 }: FlipbookProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [containerHeight, setContainerHeight] = useState('100vh')
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     // Set container height to full viewport height
@@ -32,6 +34,8 @@ export default function Flipbook({
       // Check if jQuery and flipbook plugin are loaded
       if (!window.jQuery || !window.jQuery.fn || !window.jQuery.fn.flipBook) {
         console.error('jQuery or flipBook plugin not loaded')
+        setError('Flipbook plugin failed to load')
+        setIsLoading(false)
         return
       }
 
@@ -40,30 +44,52 @@ export default function Flipbook({
 
       if (container.length === 0) {
         console.error('Container not found')
+        setError('Container not found')
+        setIsLoading(false)
         return
       }
 
       // Configure PDF.js worker path
       if (window.pdfjsLib) {
         window.pdfjsLib.GlobalWorkerOptions.workerSrc = '/flipbook/js/libs/pdf.worker.min.js'
+        console.log('PDF.js worker configured:', window.pdfjsLib.GlobalWorkerOptions.workerSrc)
+      } else {
+        console.error('PDF.js library not loaded')
+        setError('PDF.js library not loaded')
+        setIsLoading(false)
+        return
       }
 
-      // Initialize flipbook with configuration from original HTML example
+      // Initialize flipbook with configuration
       try {
+        console.log('Initializing flipbook with PDF:', pdfPath)
+
         container.flipBook({
-          // PDF source
+          // PDF source - CRITICAL SETTINGS
           pdfUrl: pdfPath,
           pdfjsLib: window.pdfjsLib,
-          pdfJsWorkerSrc: '/flipbook/js/libs/pdf.worker.min.js',
 
           // Layout and display
           pageMode: 'double',
           singlePageMode: false,
 
-          // Performance optimization
+          // Container mode - FORCE EMBEDDED
+          lightBox: false,
+          lightboxFullscreen: false,
+          lightboxStartOpen: false,
+
+          // Performance
           textureSize: 2048,
-          thumbnailTextureSize: 256,
           preloadPages: 3,
+
+          // Responsive behavior
+          responsiveView: true,
+          autoHeight: false,
+          height: window.innerHeight,
+
+          // Colors
+          backgroundColor: '#2C3E50',
+          backgroundTransparent: false,
 
           // UI Controls
           controlsPosition: 'bottom',
@@ -71,78 +97,45 @@ export default function Flipbook({
           menuTransparent: false,
           menuOverBook: true,
 
-          // Features
-          downloadURL: pdfPath,
-          downloadEnabled: true,
-          printEnabled: true,
-          searchEnabled: true,
-
-          // Table of Contents
-          tableOfContents: true,
-          tableOfContentsSidebar: true,
-
-          // Zoom
-          zoomMax: 4,
-          zoomMin: 0.95,
-          zoomStep: 0.1,
-
-          // Page flipping - THIS IS THE KEY FOR ANIMATIONS!
-          flipDuration: 1000,
-          flipSound: false,
-          sound: false,
-          sounds: {
-            startFlip: '',
-            endFlip: ''
-          },
-
-          // Mobile optimization
-          mobileScrollSupport: true,
-
-          // Responsive behavior
-          responsiveView: true,
-          autoHeight: false,
-          height: window.innerHeight,
-
-          // Colors to match UWP branding
-          backgroundColor: '#2C3E50',
-          backgroundTransparent: false,
-
           // Navigation buttons
           btnNext: { enabled: true, title: 'Next page' },
           btnPrev: { enabled: true, title: 'Previous page' },
           btnZoomIn: { enabled: true, title: 'Zoom in' },
           btnZoomOut: { enabled: true, title: 'Zoom out' },
+          btnThumbs: { enabled: true, title: 'Pages' },
+          btnSearch: { enabled: true, title: 'Search' },
+          btnDownloadPdf: { enabled: true, title: 'Download PDF', url: pdfPath },
+          btnPrint: { enabled: true, title: 'Print' },
+          btnShare: { enabled: false },
           btnAutoplay: { enabled: false },
           btnExpand: { enabled: false },
-          btnShare: { enabled: false },
-          btnDownloadPages: { enabled: false },
-          btnDownloadPdf: { enabled: true, title: 'Download PDF', url: pdfPath },
           btnSound: { enabled: false },
-          btnPrint: { enabled: true, title: 'Print' },
-          btnThumbs: { enabled: true, title: 'Pages' },
-          btnToc: { enabled: true, title: 'Table of Contents' },
-          btnBookmark: { enabled: false },
-          btnNotes: { enabled: false },
-          btnSelect: { enabled: true },
-          btnSearch: { enabled: true, title: 'Search' },
 
-          // Force container mode - NO lightbox
-          lightBox: false,
-          lightboxFullscreen: false,
-          lightboxStartOpen: false,
-          lightboxCloseOnBack: false,
-          deeplinking: { enabled: false },
+          // Callbacks for debugging
+          onLoad: function() {
+            console.log('✓ Flipbook loaded successfully')
+            setIsLoading(false)
+            setError(null)
+          },
+          onError: function(error: any) {
+            console.error('✗ Flipbook error:', error)
+            setError('Failed to load PDF: ' + (error?.message || 'Unknown error'))
+            setIsLoading(false)
+          },
         })
 
-        console.log('Flipbook initialized successfully in container mode')
+        console.log('Flipbook initialization called')
 
         // Remove any overlay elements that may have been created
         setTimeout(() => {
           $('.flipbook-overlay').remove()
           $('.flipbook-browser-fullscreen').removeClass('flipbook-browser-fullscreen')
-        }, 200)
+          $('body').removeClass('flipbook-overflow-hidden')
+        }, 300)
       } catch (err) {
         console.error('Flipbook initialization error:', err)
+        setError('Initialization failed: ' + (err as Error).message)
+        setIsLoading(false)
       }
     }, 2000)
 
@@ -187,7 +180,34 @@ export default function Flipbook({
           height: containerHeight,
           position: 'relative',
         }}
-      />
+      >
+        {/* Loading indicator */}
+        {isLoading && (
+          <div className="absolute inset-0 flex items-center justify-center bg-[#2C3E50]">
+            <div className="text-white text-center">
+              <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-white mx-auto mb-4"></div>
+              <p className="text-lg">Loading PDF...</p>
+            </div>
+          </div>
+        )}
+
+        {/* Error message */}
+        {error && (
+          <div className="absolute inset-0 flex items-center justify-center bg-[#2C3E50] p-8">
+            <div className="bg-red-600 text-white p-6 rounded-lg max-w-md">
+              <h3 className="text-xl font-bold mb-2">Error Loading Flipbook</h3>
+              <p className="mb-4">{error}</p>
+              <a
+                href={pdfPath}
+                download
+                className="inline-block bg-white text-red-600 px-6 py-2 rounded font-bold hover:bg-gray-100"
+              >
+                Download PDF Instead
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Instructions and Download - Below flipbook */}
       <div className="w-full bg-[#F5F5F5] py-6 px-4 text-center">

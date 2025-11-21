@@ -97,6 +97,11 @@ export default function Flipbook({
           menuTransparent: false,
           menuOverBook: true,
 
+          // DISABLE ALL SOUNDS - CRITICAL FIX
+          sound: false,
+          flipSound: false,
+          backgroundMusic: false,
+
           // Navigation buttons
           btnNext: { enabled: true, title: 'Next page' },
           btnPrev: { enabled: true, title: 'Previous page' },
